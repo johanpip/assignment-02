@@ -1,7 +1,3 @@
-
-
-using System;
-
 namespace Assignment2
 {
     public class Student
@@ -27,12 +23,10 @@ namespace Assignment2
 
         public Status CalculateStatus()
         {
-            if (StartDate > DateTime.Now)
-                return Status.New;
-            if (EndDate > DateTime.Now)
-                return Status.Active;
-            if (GraduationDate > DateTime.Now)
-                return Status.Dropout;
+            if (StartDate > DateTime.Now) return Status.New;
+            if (EndDate > DateTime.Now) return Status.Active;
+            if (GraduationDate != EndDate) return Status.Dropout;
+
             return Status.Graduated;
         }
 
@@ -49,4 +43,5 @@ namespace Assignment2
         Dropout,
         Graduated
     }
+
 }

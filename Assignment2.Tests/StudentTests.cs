@@ -1,6 +1,3 @@
-//test the class Student with fluent assertions
-//test to string method and the status
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
