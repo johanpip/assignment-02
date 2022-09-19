@@ -21,7 +21,7 @@ namespace Assignment2.Tests
             var result = student.ToString();
 
             //Assert
-            result.Should().Be("Id: 1, Name: John, Surname: Doe, Status: Active, StartDate: 01-09-2021 00:00:00, EndDate: 30-06-2023 00:00:00, GraduationDate: 30-06-2023 00:00:00");
+            result.Should().Be("Id: 1, Name: John, Surname: Doe, Status: Active, StartDate: 01/09/2021 00.00.00, EndDate: 30/06/2023 00.00.00, GraduationDate: 30/06/2023 00.00.00");
         }
 
 
