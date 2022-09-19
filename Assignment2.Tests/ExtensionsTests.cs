@@ -7,52 +7,52 @@ public class ExtensionsTests
     [Fact]
     public void IsSecure_returns_true_for_https()
     {
-        //arrange
+        //Arrange
         var uri = new Uri("https://www.google.com");
 
-        //act
+        //Act
         var result = Extensions.IsSecure(uri);
 
-        //assert
+        //Assert
         result.Should().BeTrue();
     }
 
     [Fact]
     public void IsSecure_returns_false_for_http()
     {
-        //arrange
+        //Arrange
         var uri = new Uri("http://www.google.com");
 
-        //act
+        //Act
         var result = Extensions.IsSecure(uri);
 
-        //assert
+        //Assert
         result.Should().BeFalse();
     }
 
     [Fact]
     public void WordCount_returns_1_for_one_word()
     {
-        //arrange
+        //Arrange
         var str = "Test";
 
-        //act
+        //Act
         var result = Extensions.WordCount(str);
 
-        //assert
+        //Assert
         result.Should().Be(1);
     }
 
     [Fact]
     public void WordCount_returns_3_for_three_words()
     {
-        //arrange
+        //Arrange
         var str = "Hello World Test";
 
-        //act
+        //Act
         var result = Extensions.WordCount(str);
 
-        //assert
+        //Assert
         result.Should().Be(3);
     }
 }
