@@ -22,7 +22,7 @@ namespace Assignment2.Tests
             var result = student.ToString();
 
             //Assert
-            result.Should().Be("Id: 1, Name: John, Surname: Doe, Status: Active, StartDate: 01/09/2021 00.00.00, EndDate: 30/06/2023 00.00.00, GraduationDate: 30/06/2023 00.00.00");
+            result.Should().Be("Id: 1, Name: John, Surname: Doe, Status: Active, StartDate: 01-09-2021 00:00:00, EndDate: 30-06-2023 00:00:00, GraduationDate: 30-06-2023 00:00:00");
         }
 
         //Testing CalculateStatus method
@@ -83,7 +83,7 @@ namespace Assignment2.Tests
         {
             //Arrange
             var student = new ImmutableStudent(1, "John", "Doe", new DateTime(2019, 9, 1), new DateTime(2021, 6, 30), new DateTime(2021, 6, 30));
-            var newStudent = student with { GivenName = "Joe"};
+            var newStudent = student with { GivenName = "Joe" };
             //Act
             var result = student == newStudent;
 
@@ -96,8 +96,8 @@ namespace Assignment2.Tests
         {
             //Arrange
             var student = new ImmutableStudent(1, "John", "Doe", new DateTime(2019, 9, 1), new DateTime(2021, 6, 30), new DateTime(2021, 6, 30));
-            var newStudent = student with { GivenName = "Joe"};
-            var newerStudent = newStudent with { GivenName = "John"};
+            var newStudent = student with { GivenName = "Joe" };
+            var newerStudent = newStudent with { GivenName = "John" };
             //Act
             var result = student == newerStudent;
 
