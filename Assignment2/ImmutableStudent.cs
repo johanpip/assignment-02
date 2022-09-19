@@ -2,11 +2,8 @@ namespace Assignment2
 {
 public record ImmutableStudent(int Id, string GivenName, string Surname, DateTime StartDate, DateTime EndDate, DateTime GraduationDate){
         
-        public Status Status { get; init; }
+        public Status Status { get; private set; }
         
-        public ImmutableStudent() : this(default, null, null, default, default, default){
-            Status = CalculateStatus();
-        }
         public Status CalculateStatus()
         {
             if (StartDate > DateTime.Now) return Status.New;
@@ -18,6 +15,7 @@ public record ImmutableStudent(int Id, string GivenName, string Surname, DateTim
 
         public override string ToString()
         {
+            Status = CalculateStatus();
             return $"Id: {Id}, Name: {GivenName}, Surname: {Surname}, Status: {Status}, StartDate: {StartDate}, EndDate: {EndDate}, GraduationDate: {GraduationDate}";
         }
     }
