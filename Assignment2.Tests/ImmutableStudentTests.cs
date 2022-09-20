@@ -33,7 +33,7 @@ namespace Assignment2.Tests
             var student = new ImmutableStudent(1, "John", "Doe", new DateTime(2022, 10, 30), new DateTime(2024, 12, 31), new DateTime(2024, 12, 31));
 
             //Act
-            var result = student.CalculateStatus();
+            var result = student.Status;
 
             //Assert
             result.Should().Be(Status.New);
@@ -46,7 +46,7 @@ namespace Assignment2.Tests
             var student = new ImmutableStudent(1, "John", "Doe", new DateTime(2021, 9, 1), new DateTime(2023, 6, 30), new DateTime(2023, 6, 30));
 
             //Act
-            var result = student.CalculateStatus();
+            var result = student.Status;
 
             //Assert
             result.Should().Be(Status.Active);
@@ -59,7 +59,7 @@ namespace Assignment2.Tests
             var student = new ImmutableStudent(1, "John", "Doe", new DateTime(2021, 9, 1), new DateTime(2022, 08, 22), new DateTime(2023, 12, 31));
 
             //Act
-            var result = student.CalculateStatus();
+            var result = student.Status;
 
             //Assert
             result.Should().Be(Status.Dropout);
@@ -72,7 +72,7 @@ namespace Assignment2.Tests
             var student = new ImmutableStudent(1, "John", "Doe", new DateTime(2019, 9, 1), new DateTime(2021, 6, 30), new DateTime(2021, 6, 30));
 
             //Act
-            var result = student.CalculateStatus();
+            var result = student.Status;
 
             //Assert
             result.Should().Be(Status.Graduated);

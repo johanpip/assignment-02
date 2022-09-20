@@ -2,9 +2,9 @@ namespace Assignment2
 {
 public record ImmutableStudent(int Id, string GivenName, string Surname, DateTime StartDate, DateTime EndDate, DateTime GraduationDate){
         
-        public Status Status { get; private set; }
+        public Status Status { get; init; } = CalculateStatus(StartDate, EndDate, GraduationDate);
         
-        public Status CalculateStatus()
+        public static Status CalculateStatus(DateTime StartDate, DateTime EndDate, DateTime GraduationDate)
         {
             if (StartDate > DateTime.Now) return Status.New;
             if (EndDate > DateTime.Now) return Status.Active;
@@ -15,7 +15,6 @@ public record ImmutableStudent(int Id, string GivenName, string Surname, DateTim
 
         public override string ToString()
         {
-            Status = CalculateStatus();
             return $"Id: {Id}, Name: {GivenName}, Surname: {Surname}, Status: {Status}, StartDate: {StartDate}, EndDate: {EndDate}, GraduationDate: {GraduationDate}";
         }
     }
